@@ -31,6 +31,7 @@
         const productDetailsLink = desc.querySelector('.product-details-link');
         if (productDetailsLink) {
             desc.parentNode.insertBefore(productDetailsLink, desc.nextSibling);
+            productDetailsLink.style.marginBottom = '2em';
         }
 
         const wrapper = document.createElement('div');
@@ -49,6 +50,12 @@
         headerTop.onclick = e => {
             e.preventDefault();
 
+            // Rotate arrow immediately at click so it animates with the slider
+            if (arrow) {
+                const isOpen = $(wrapper).is(':visible');
+                arrow.style.transform = isOpen ? 'rotate(0deg)' : 'rotate(180deg)';
+            }
+
             $(wrapper).slideToggle('slow', function () {
                 // Refresh Slick slider after animation completes
                 if (slider && window.$ && window.$.fn.slick) {
@@ -62,12 +69,13 @@
                     }
                 }
             });
-
-            if (arrow) {
-                const isOpen = $(wrapper).is(':visible');
-                arrow.style.transform = isOpen ? 'rotate(0deg)' : 'rotate(180deg)';
-            }
         };
+
+        // Reveal the header now that collapse is set up — no more jumping
+        const productsHeader = document.querySelector('.woocommerce-products-header');
+        if (productsHeader) {
+            productsHeader.style.visibility = 'visible';
+        }
     }
 
     function cleanup() {
@@ -88,7 +96,10 @@
             if (desc) {
                 wrapper.parentNode.insertBefore(desc, wrapper);
                 desc.style.cssText = '';
-                if (productDetailsLink) desc.appendChild(productDetailsLink);
+                if (productDetailsLink) {
+                    productDetailsLink.style.marginBottom = '';
+                    desc.appendChild(productDetailsLink);
+                }
             }
             if (slider) {
                 wrapper.parentNode.insertBefore(slider, wrapper);
@@ -111,6 +122,14 @@
                 initCollapse();
             }
         }, 250); // Faster debounce (was 2500ms)
+    }
+
+    // Hide header immediately on mobile to prevent layout jump before VWO runs
+    if (shouldRunOnMobile()) {
+        const productsHeader = document.querySelector('.woocommerce-products-header');
+        if (productsHeader) {
+            productsHeader.style.visibility = 'hidden';
+        }
     }
 
     initCollapse();
