@@ -1,18 +1,18 @@
 function initTableHeaderSticky() {
     console.log('🚀 initTableHeaderSticky called');
-    
+
     // Common elements
     const productsHeader = document.querySelector('.woocommerce-products-header');
     const fullProductDetails = document.querySelector('#full-product-details');
-    
+
     // Desktop elements
     const table = document.querySelector('.which-mesh-category');
     const originalThead = table ? table.querySelector('thead') : null;
-    
+
     // Mobile elements
     const filterWrapper = document.querySelector('.filter-table-wrapper');
     const productCards = document.querySelector('.product-cards');
-    
+
     console.log('📦 Elements found:', {
         productsHeader,
         fullProductDetails,
@@ -21,48 +21,48 @@ function initTableHeaderSticky() {
         filterWrapper,
         productCards
     });
-    
+
     if (!productsHeader) {
         console.error('❌ Missing productsHeader');
         return;
     }
-    
+
     let stickyTheadWrapper = null;
     let lastMode = null;
     let adminBarHeight = 0;
-    
+
     const adminBar = document.querySelector('#wpadminbar');
     if (adminBar) {
         adminBarHeight = adminBar.offsetHeight;
     }
-    
+
     // ==================== Visibility check ====================
     function isElementVisible(el) {
         if (!el) return false;
         return el.offsetParent !== null && getComputedStyle(el).display !== 'none';
     }
-    
+
     // ==================== Class-based toggle ====================
     function activateSticky() {
         document.body.classList.add('sticky-table-active');
         console.log('✅ Sticky activated');
     }
-    
+
     function deactivateSticky() {
         document.body.classList.remove('sticky-table-active');
         console.log('❌ Sticky deactivated');
     }
-    
+
     function isStickyActive() {
         return document.body.classList.contains('sticky-table-active');
     }
-    
+
     // ==================== DESKTOP: Clone thead ====================
     function createStickyThead() {
         if (!originalThead || stickyTheadWrapper) return;
-        
+
         const clonedThead = originalThead.cloneNode(true);
-        
+
         stickyTheadWrapper = document.createElement('table');
         stickyTheadWrapper.id = 'sticky-thead-wrapper';
         stickyTheadWrapper.className = table.className;
@@ -76,43 +76,43 @@ function initTableHeaderSticky() {
         `;
         stickyTheadWrapper.appendChild(clonedThead);
         document.body.appendChild(stickyTheadWrapper);
-        
+
         connectClonedFilters();
         connectClonedClearButton();
-        
+
         console.log('✅ Desktop: Sticky thead clone created');
     }
-    
+
     function connectClonedFilters() {
         if (!stickyTheadWrapper || !originalThead) return;
-        
+
         const clonedSelects = stickyTheadWrapper.querySelectorAll('select');
         const originalSelects = originalThead.querySelectorAll('select');
-        
+
         clonedSelects.forEach((clonedSelect, index) => {
             const originalSelect = originalSelects[index];
             if (!originalSelect) return;
-            
+
             clonedSelect.addEventListener('change', (e) => {
                 console.log('🔄 Cloned filter changed:', e.target.value);
                 originalSelect.value = e.target.value;
                 originalSelect.dispatchEvent(new Event('change', { bubbles: true }));
             });
-            
+
             originalSelect.addEventListener('change', () => {
                 clonedSelect.value = originalSelect.value;
             });
         });
-        
+
         console.log('✅ Cloned filters connected:', clonedSelects.length);
     }
-    
+
     function connectClonedClearButton() {
         if (!stickyTheadWrapper) return;
-        
+
         const clonedClearBtn = stickyTheadWrapper.querySelector('#clear_all_filters');
         const originalClearBtn = document.querySelector('.which-mesh-category thead #clear_all_filters');
-        
+
         if (!clonedClearBtn || !originalClearBtn) {
             console.log('⚠️ Clear button not found');
             return;
@@ -135,10 +135,10 @@ function initTableHeaderSticky() {
             justify-content: center;
             line-height: 14px;
         `;
-        
+
         // Give cloned button unique ID to avoid conflicts
         clonedClearBtn.id = 'clear_all_filters_clone';
-        
+
         // Click clone → trigger original
         clonedClearBtn.addEventListener('click', (e) => {
             e.preventDefault();
@@ -158,24 +158,24 @@ function initTableHeaderSticky() {
         function syncClearButtonVisibility() {
             clonedClearBtn.style.display = getComputedStyle(originalClearBtn).display;
         }
-        
+
         // Watch for original button visibility changes
         const observer = new MutationObserver(syncClearButtonVisibility);
         observer.observe(originalClearBtn, { attributes: true, attributeFilter: ['style'] });
-        
+
         // Initial sync
         syncClearButtonVisibility();
-        
+
         console.log('✅ Clear button connected');
     }
-    
+
     function updateDesktopStickyPosition() {
         if (!stickyTheadWrapper || !table) return;
-        
+
         const tableRect = table.getBoundingClientRect();
         stickyTheadWrapper.style.left = `${tableRect.left}px`;
         stickyTheadWrapper.style.width = `${tableRect.width}px`;
-        
+
         const originalCells = originalThead.querySelectorAll('th, td');
         const clonedCells = stickyTheadWrapper.querySelectorAll('th, td');
         originalCells.forEach((cell, index) => {
@@ -184,11 +184,19 @@ function initTableHeaderSticky() {
             }
         });
     }
-    
+
     // ==================== MOBILE: Fixed filter wrapper ====================
     function updateMobileStickyPosition() {
         if (!filterWrapper) return;
-        
+
+        // Create placeholder to prevent content jump
+        if (!document.getElementById('filter-placeholder')) {
+            const placeholder = document.createElement('div');
+            placeholder.id = 'filter-placeholder';
+            placeholder.style.height = filterWrapper.offsetHeight + 'px';
+            filterWrapper.parentNode.insertBefore(placeholder, filterWrapper);
+        }
+
         filterWrapper.style.position = 'fixed';
         filterWrapper.style.top = '0';
         filterWrapper.style.left = '0';
@@ -197,9 +205,14 @@ function initTableHeaderSticky() {
         filterWrapper.style.width = 'calc(100% - 30px)';
         filterWrapper.style.background = '#fff';
     }
-    
+
     function resetMobileSticky() {
         if (!filterWrapper) return;
+
+        // Remove placeholder
+        const placeholder = document.getElementById('filter-placeholder');
+        if (placeholder) placeholder.remove();
+
         filterWrapper.style.position = '';
         filterWrapper.style.top = '';
         filterWrapper.style.left = '';
@@ -208,7 +221,7 @@ function initTableHeaderSticky() {
         filterWrapper.style.margin = '';
         filterWrapper.style.background = '';
     }
-    
+
     // ==================== Reset ====================
     function resetAll() {
         deactivateSticky();
@@ -216,26 +229,26 @@ function initTableHeaderSticky() {
         lastMode = null;
         console.log('🔄 Reset all');
     }
-    
+
     // ==================== Main scroll handler ====================
     function handleScroll() {
         const windowWidth = window.innerWidth;
         const isMobile = windowWidth < 1024;
         const isDesktop = windowWidth >= 1024;
         const currentMode = isMobile ? 'mobile' : 'desktop';
-        
+
         if (!currentMode) {
             console.log('⚠️ No visible view');
             return;
         }
-        
+
         // View changed - reset
         if (lastMode !== null && lastMode !== currentMode) {
             console.log('📱↔️🖥️ View changed:', lastMode, '→', currentMode);
             resetAll();
         }
         lastMode = currentMode;
-        
+
         // Get trigger elements
         let startElement, endElement;
         if (isMobile) {
@@ -245,18 +258,18 @@ function initTableHeaderSticky() {
             startElement = originalThead;
             endElement = fullProductDetails;
         }
-        
+
         if (!startElement || !endElement) return;
-        
+
         const startRect = startElement.getBoundingClientRect();
         const endRect = endElement.getBoundingClientRect();
-        
+
         const hasLeftStart = startRect.top <= adminBarHeight;
         const hasReachedEnd = endRect.top <= adminBarHeight;
         const shouldBeSticky = hasLeftStart && !hasReachedEnd;
-        
+
         // console.log('📍 Scroll:', { currentMode, hasLeftStart, hasReachedEnd, shouldBeSticky });
-        
+
         if (shouldBeSticky && !isStickyActive()) {
             activateSticky();
             if (isMobile) {
@@ -278,10 +291,10 @@ function initTableHeaderSticky() {
             }
         }
     }
-    
+
     // ==================== Loader ====================
     let loaderOverlay = null;
-    
+
     function createLoader() {
         if (loaderOverlay) return;
         loaderOverlay = document.createElement('div');
@@ -289,20 +302,20 @@ function initTableHeaderSticky() {
         loaderOverlay.innerHTML = '<div class="filter-loader-spinner"></div>';
         document.body.appendChild(loaderOverlay);
     }
-    
+
     function showLoader() {
         if (!loaderOverlay) createLoader();
         loaderOverlay.classList.add('active');
         console.log('⏳ Loader shown');
     }
-    
+
     function hideLoader() {
         if (loaderOverlay) {
             loaderOverlay.classList.remove('active');
         }
         console.log('✅ Loader hidden');
     }
-    
+
     // ==================== Smooth scroll with custom duration ====================
     function smoothScrollTo(targetY, duration) {
         const startY = window.pageYOffset;
@@ -342,7 +355,7 @@ function initTableHeaderSticky() {
             console.log('📍 Scrolled to productsHeader bottom');
         }
     }
-    
+
     // ==================== Filter change handler ====================
     function onFilterUsed() {
         showLoader();
@@ -361,7 +374,7 @@ function initTableHeaderSticky() {
         }
 
         const productContainer = document.querySelector('.which-mesh-category tbody')
-                              || document.querySelector('.which-mesh-category-form');
+            || document.querySelector('.which-mesh-category-form');
 
         if (productContainer) {
             const observer = new MutationObserver(() => {
@@ -379,20 +392,20 @@ function initTableHeaderSticky() {
             doScroll();
         }
     }
-    
+
     function connectFilterScrolling() {
         // Listen on all original filter selects (both desktop thead and mobile filterWrapper)
         const allFilterSelects = document.querySelectorAll(
             '.which-mesh-category thead select, .filter-table-wrapper select'
         );
-        
+
         allFilterSelects.forEach((select) => {
             select.addEventListener('change', () => {
                 console.log('🔄 Filter used, showing loader and preparing scroll');
                 onFilterUsed();
             });
         });
-        
+
         // Also listen on the clear button
         const clearBtn = document.querySelector('#clear_all_filters');
         if (clearBtn) {
@@ -401,18 +414,18 @@ function initTableHeaderSticky() {
                 onFilterUsed();
             });
         }
-        
+
         console.log('✅ Filter scroll listeners connected:', allFilterSelects.length, 'selects');
     }
-    
+
     // ==================== Initialize ====================
     createStickyThead();
     createLoader();
     connectFilterScrolling();
-    
+
     window.addEventListener('scroll', handleScroll);
     window.addEventListener('resize', handleScroll);
-    
+
     handleScroll();
 }
 
