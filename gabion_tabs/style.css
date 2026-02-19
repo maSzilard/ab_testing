@@ -1,0 +1,763 @@
+body {
+    display: none
+}
+
+#full-product-details .less-videos-button {
+    display: none !important
+}
+
+.GABIONTABBED {
+    display: block !important
+}
+
+.GABIONTABBED #main-content .content-area {
+    position: relative
+}
+
+.GABIONTABBED #main-content .content-area .tabchangeloader {
+    position: absolute;
+    z-index: 3;
+    background-color: #000;
+    left: 0;
+    top: 0;
+    right: 0;
+    opacity: .2;
+    bottom: 250px;
+    display: none
+}
+
+.GABIONTABBED #main-content .content-area .tabchangeloader img {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    margin: 0 auto
+}
+
+.GABIONTABBED #main-content .content-area .info-holder .description-holder,
+.GABIONTABBED #main-content .content-area .info-holder .page-header-top {
+    padding: 0
+}
+
+.GABIONTABBED #main-content .content-area .biggraytitle,
+.GABIONTABBED #main-content .content-area .biggraytitle-learninghub {
+    font-size: 40px;
+    font-weight: 700;
+    color: #666;
+    display: block
+}
+
+.GABIONTABBED #main-content .content-area .signposts {
+    max-width: 100%;
+    margin-bottom: 50px
+}
+
+.GABIONTABBED #main-content .content-area .signpost {
+    display: block;
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #c4c4c4;
+    box-shadow: 0 20px 30px #e6e6e6;
+    font-size: 20px;
+    color: #000;
+    cursor: pointer;
+    padding: 20px;
+    border-radius: 30px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    position: relative
+}
+
+.GABIONTABBED #main-content .content-area .signpost svg {
+    position: absolute;
+    top: 22px;
+    right: 22px
+}
+
+.GABIONTABBED #main-content .content-area .signpost:hover {
+    background-color: #efefef
+}
+
+.GABIONTABBED #main-content .content-area .tabs-head {
+    margin: 0
+}
+
+@media (max-width:600px) {
+    .GABIONTABBED #main-content .content-area .tabs-head li {
+        font-size: 13px;
+        padding: 10px 0;
+        min-width: 23%;
+        vertical-align: middle;
+        display: table
+    }
+
+    .GABIONTABBED #main-content .content-area .tabs-head li span {
+        display: table-cell;
+        vertical-align: middle
+    }
+}
+
+.GABIONTABBED #main-content .content-area header.woocommerce-products-header {
+    background-color: #fcfcfc;
+    padding: 20px;
+    border-left: 1px solid #c4c4c4;
+    border-right: 1px solid #c4c4c4
+}
+
+.GABIONTABBED #main-content .content-area .download-block,
+.GABIONTABBED #main-content .content-area .page-description-bottom,
+.GABIONTABBED #main-content .content-area a[href='#full-product-details'] {
+    display: none
+}
+
+.GABIONTABBED #main-content .content-area .new-ajax-content-loader {
+    display: block;
+    margin: 100px auto 0;
+    padding: 30px
+}
+
+.GABIONTABBED #main-content .content-area .new-ajax-content {
+    display: none
+}
+
+.GABIONTABBED #main-content .content-area .page-description-bottom {
+    padding: 20px;
+    background-color: #fcfcfc;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc
+}
+
+.GABIONTABBED #main-content .content-area .page-description-bottom .video-grid {
+    grid-template-columns: repeat(3, 260px)
+}
+
+.GABIONTABBED #main-content .content-area .page-description-bottom .gallery-photo-list .item {
+    width: 162px
+}
+
+@media screen and (max-width:767px) {
+    .GABIONTABBED #main-content .content-area .page-description-bottom .video-grid {
+        grid-template-columns: repeat(1, 100%)
+    }
+
+    .GABIONTABBED #main-content .content-area .page-description-bottom .gallery-photo-list .item {
+        width: 140px
+    }
+}
+
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize {
+    margin-bottom: 30px
+}
+
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .container {
+    width: 100%
+}
+
+@media (max-width:767px) {
+    .GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .container {
+        padding: 0
+    }
+}
+
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-rope-section {
+    margin-top: -100px;
+    background-color: #fcfcfc;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    padding: 40px 0
+}
+
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-rope-section h2 {
+    margin: 0 0 10px
+}
+
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-rope-section .step-block {
+    border-radius: 25px;
+    background-color: #e6e6e6;
+    margin-bottom: 60px;
+    padding-top: 1px;
+    display: flex;
+    align-items: center
+}
+
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-rope-section .step-block .info-box {
+    width: calc(100% - 175px);
+    padding: 20px 25px
+}
+
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-rope-section .step-block .info-box:only-child {
+    width: 100%
+}
+
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-rope-section .step-block .form-group {
+    max-width: 715px;
+    margin: 0 auto
+}
+
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-rope-section .step-block .circle-box {
+    position: relative;
+    width: 150px;
+    overflow: hidden;
+    margin-top: -22px;
+    align-self: flex-end;
+    margin-left: 25px
+}
+
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-rope-section .step-block .circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: -20px;
+    background-color: #03ba48;
+    color: #fff;
+    font-size: 20px
+}
+
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-rope-section .step-block .circle p {
+    margin-bottom: 0
+}
+
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-rope-section .step-block .num {
+    font-size: 50px
+}
+
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-rope-section .row {
+    display: flex;
+    margin: 0 -20px
+}
+
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-rope-section .column {
+    padding: 0 20px;
+    width: 50%
+}
+
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-rope-section .cost-holder h3 {
+    text-transform: uppercase;
+    margin: 0 0 15px;
+    font-weight: 700
+}
+
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-rope-section .cost-holder h4 {
+    display: inline-block;
+    border-bottom: 1px solid #fff;
+    margin: 0 0 5px
+}
+
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-rope-section .cost-holder small {
+    display: block;
+    font-size: 12px;
+    margin-bottom: 10px
+}
+
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-rope-section .cost-holder .added_to_cart {
+    display: none
+}
+
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-rope-section .cost-holder .cost-box {
+    padding: 20px;
+    background-color: #e6e6e6;
+    border-radius: 25px;
+    border: 1px solid #fcfcfc;
+    height: 100%
+}
+
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-rope-section .btn {
+    text-align: center;
+    padding: 9px 14px;
+    font-size: 20px;
+    padding: 15px 32px;
+    background-color: #ff8400;
+}
+
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-rope-section .visual-rope-holder {
+    display: flex;
+    align-items: center;
+    position: relative;
+    background-color: #fff;
+    border: 1px solid #656565;
+    border-radius: 25px;
+    padding: 50px;
+    margin-bottom: 60px
+}
+
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-rope-section .visual-rope-holder .rope-image {
+    background-position: 50% 50%;
+    height: 100px;
+    width: 100%;
+    background-repeat: no-repeat
+}
+
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-rope-section .visual-rope-holder .extra-image {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 20px;
+    max-height: 100px
+}
+
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-rope-section .visual-rope-holder .extra-image.extra-left {
+    left: auto;
+    right: 20px
+}
+
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-rope-form,
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-rope-section .title-box {
+    margin-bottom: 50px
+}
+
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-rope-form label {
+    display: inline-block;
+    margin-bottom: 10px
+}
+
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-rope-form input,
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-rope-form select,
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-rope-form textarea {
+    border: 1px solid #e2e2e2;
+    padding: 10px;
+    background-color: #fff;
+    width: 100%;
+    border-radius: 3px;
+    font-size: 14px
+}
+
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-rope-form textarea {
+    min-height: 100px;
+    resize: vertical
+}
+
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-rope-form input[type=submit] {
+    text-transform: uppercase;
+    cursor: pointer;
+    background-color: #ff8400;
+    color: #fff;
+    border-radius: 5px;
+    transition: background .3s linear;
+    font-weight: 700
+}
+
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-rope-form input[type=submit]:hover {
+    background-color: #0ba2e8
+}
+
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-rope-form input[disabled] {
+    opacity: 1
+}
+
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-wf-custom-gabion-form select,
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-wf-form select {
+    width: 100%
+}
+
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-wf-custom-gabion-form label,
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-wf-form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-size: 16px;
+    color: #000
+}
+
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-wf-custom-gabion-form label .label-note,
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-wf-form label .label-note {
+    color: #656565;
+    font-size: 14px
+}
+
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-result-holder input[type=submit],
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-wf-form input[type=submit] {
+    display: block;
+    max-width: 430px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 18px;
+    white-space: normal;
+    padding: 12px 25px
+}
+
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize #full-product-details .calculate-wf-custom-gabion-form input[type=submit] {
+    font-size: 20px;
+    padding: 15px 32px;
+    background-color: #ff8400;
+    width: auto
+}
+
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-wf-custom-gabion-form input[type=submit]:focus,
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-wf-custom-gabion-form input[type=submit]:hover {
+    background-color: #0ba2e8
+}
+
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-wf-custom-gabion-form .error-message {
+    color: tomato
+}
+
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-result-holder input[type=submit] {
+    margin: 0;
+    max-width: none;
+    font-size: 16px;
+    padding: 9px 25px
+}
+
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-wf-custom-gabion-form .column,
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-wf-form .column {
+    width: 100%
+}
+
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-wf-custom-gabion-form input[type=radio],
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-wf-form input[type=radio] {
+    display: inline-block
+}
+
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-wf-custom-gabion-form .input-holder,
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-wf-form .input-holder {
+    margin-bottom: 10px
+}
+
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-wf-custom-gabion-form .real-input,
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-wf-form .real-input {
+    position: fixed;
+    top: -9999px;
+    left: -9999px;
+    opacity: 0;
+    visibility: hidden
+}
+
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-wf-custom-gabion-form .real-input[type=radio]+.fake-input,
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-wf-custom-gabion-form .real-input[type=radio]+.fake-input:before,
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-wf-form .real-input[type=radio]+.fake-input,
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-wf-form .real-input[type=radio]+.fake-input:before {
+    border-radius: 50%
+}
+
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-wf-custom-gabion-form .real-input:checked+.fake-input:before,
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-wf-form .real-input:checked+.fake-input:before {
+    opacity: 1
+}
+
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-wf-custom-gabion-form .fake-input,
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-wf-form .fake-input {
+    display: inline-block;
+    vertical-align: middle;
+    width: 12px;
+    height: 12px;
+    background-color: #fff;
+    border: 1px solid #444;
+    position: relative
+}
+
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-wf-custom-gabion-form .fake-input:before,
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-wf-form .fake-input:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 6px;
+    height: 6px;
+    background-color: #444;
+    opacity: 0
+}
+
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-wf-custom-gabion-form .fake-label,
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-wf-form .fake-label {
+    color: #656565;
+    font-size: 14px;
+    font-weight: 400
+}
+
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-wf-custom-gabion-form .cost-holder,
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-wf-form .cost-holder {
+    text-align: center
+}
+
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-result-holder .btn-wrapper,
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-wf-custom-gabion-form .btn-wrapper,
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-wf-form .btn-wrapper {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative
+}
+
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-result-holder .btn-wrapper .loadingio-spinner-spinner-ghrpw5fuew,
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-wf-custom-gabion-form .btn-wrapper .loadingio-spinner-spinner-ghrpw5fuew,
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-wf-form .btn-wrapper .loadingio-spinner-spinner-ghrpw5fuew {
+    position: absolute;
+    top: 50%;
+    right: -4px;
+    transform: translateY(-50%);
+    margin: 0
+}
+
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-result-holder,
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-result-holder * {
+    box-sizing: border-box
+}
+
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-result-holder {
+    padding: 75px 0 0
+}
+
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-result-holder .text-green {
+    color: #03ba48
+}
+
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-result-holder,
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-result-holder .calculate-row {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px
+}
+
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-result-holder .col {
+    width: 50%;
+    padding: 0 15px
+}
+
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-result-holder .image-holder {
+    text-align: center
+}
+
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-result-holder .summary-title {
+    text-align: left
+}
+
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-result-holder .summary-title h3 {
+    margin: 0 0 10px
+}
+
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-result-holder .calculate-row {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ccc
+}
+
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-result-holder .calculate-row .calculate-item {
+    padding: 0 15px;
+    margin-bottom: 10px;
+    width: 20%;
+    text-align: center;
+    font-size: 14px
+}
+
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-result-holder .calculate-row .calculate-item.title-item {
+    width: 60%;
+    text-align: left
+}
+
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-result-holder .calculate-row h3 {
+    margin: 0;
+    padding: 0;
+    font-size: 14px
+}
+
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-result-holder .calculate-row h3 strong {
+    font-size: 16px
+}
+
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-result-holder .calculate-row h3 .text-green {
+    font-weight: 700
+}
+
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-result-holder .btn-holder {
+    padding-top: 15px
+}
+
+@media (max-width:1023px) {
+    .GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-result-holder .col {
+        width: 100%
+    }
+
+    .GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-result-holder .calculate-row .calculate-item {
+        width: 50%
+    }
+
+    .GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-result-holder .calculate-row .calculate-item.title-item {
+        width: 100%
+    }
+
+    .GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-result-holder .calculate-row .calculate-item.count {
+        text-align: left
+    }
+
+    .GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-result-holder .calculate-row .calculate-item.price {
+        text-align: right
+    }
+}
+
+@keyframes ldio-ag8ad00iq89 {
+    0% {
+        opacity: 1
+    }
+
+    100% {
+        opacity: 0
+    }
+}
+
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .ldio-ag8ad00iq89 div {
+    left: 47px;
+    top: 24px;
+    position: absolute;
+    animation: ldio-ag8ad00iq89 linear 1s infinite;
+    background: #fff;
+    width: 6px;
+    height: 12px;
+    border-radius: NaNpx;
+    transform-origin: 3px 26px;
+    box-sizing: content-box
+}
+
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .ldio-ag8ad00iq89 div:nth-child(1) {
+    transform: rotate(0);
+    animation-delay: -.91666667s;
+    background: #fff
+}
+
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .ldio-ag8ad00iq89 div:nth-child(2) {
+    transform: rotate(30deg);
+    animation-delay: -.83333333s;
+    background: #fff
+}
+
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .ldio-ag8ad00iq89 div:nth-child(3) {
+    transform: rotate(60deg);
+    animation-delay: -.75s;
+    background: #fff
+}
+
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .ldio-ag8ad00iq89 div:nth-child(4) {
+    transform: rotate(90deg);
+    animation-delay: -.66666667s;
+    background: #fff
+}
+
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .ldio-ag8ad00iq89 div:nth-child(5) {
+    transform: rotate(120deg);
+    animation-delay: -.58333333s;
+    background: #fff
+}
+
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .ldio-ag8ad00iq89 div:nth-child(6) {
+    transform: rotate(150deg);
+    animation-delay: -.5s;
+    background: #fff
+}
+
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .ldio-ag8ad00iq89 div:nth-child(7) {
+    transform: rotate(180deg);
+    animation-delay: -.41666667s;
+    background: #fff
+}
+
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .ldio-ag8ad00iq89 div:nth-child(8) {
+    transform: rotate(210deg);
+    animation-delay: -.33333333s;
+    background: #fff
+}
+
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .ldio-ag8ad00iq89 div:nth-child(9) {
+    transform: rotate(240deg);
+    animation-delay: -.25s;
+    background: #fff
+}
+
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .ldio-ag8ad00iq89 div:nth-child(10) {
+    transform: rotate(270deg);
+    animation-delay: -.16666667s;
+    background: #fff
+}
+
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .ldio-ag8ad00iq89 div:nth-child(11) {
+    transform: rotate(300deg);
+    animation-delay: -83.33333ms;
+    background: #fff
+}
+
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .ldio-ag8ad00iq89 div:nth-child(12) {
+    transform: rotate(330deg);
+    animation-delay: 0s;
+    background: #fff
+}
+
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .loadingio-spinner-spinner-9ejzu2yduw4 {
+    width: 44px;
+    height: 44px;
+    display: inline-block;
+    overflow: hidden
+}
+
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .ldio-ag8ad00iq89 {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform: translateZ(0) scale(.44);
+    backface-visibility: hidden;
+    transform-origin: 0 0
+}
+
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-result-holder .btn-wrapper .loadingio-spinner-spinner-9ejzu2yduw4,
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-wf-custom-gabion-form .btn-wrapper .loadingio-spinner-spinner-9ejzu2yduw4,
+.GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-wf-form .btn-wrapper .loadingio-spinner-spinner-9ejzu2yduw4 {
+    position: absolute;
+    top: 50%;
+    right: -4px;
+    transform: translateY(-50%);
+    margin: 0
+}
+
+@media screen and (max-width: 565px) {
+    .GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-rope-section .step-block {
+        border-radius: 25px;
+        background-color: #e6e6e6;
+        margin-bottom: 60px;
+        padding-top: 1px;
+        display: flex;
+        align-items: center;
+    }
+
+    .GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-rope-section .step-block .circle-box {
+        position: relative;
+        width: 60px;
+        overflow: hidden;
+        margin-top: -35px;
+        align-self: flex-start;
+        margin-left: 5px;
+    }
+
+    .GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-rope-section .step-block .info-box {
+        width: calc(100% - 75px);
+        padding: 20px 15px;
+    }
+
+    .GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-rope-section .step-block .circle {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+        margin-bottom: 0;
+        background-color: #03ba48;
+        color: #fff;
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+    .GABIONTABBED #main-content .content-area .new-ajax-content-cuttosize .calculate-rope-section .step-block .num {
+        font-size: 16px;
+        line-height: 1;
+    }
+}

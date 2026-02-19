@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dresses Carousel</title>
+    
+    <!-- Slick Carousel CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: #f8f9fa;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 32px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .read-more {
+            color: #666;
+            text-decoration: none;
+            font-size: 14px;
+            margin-bottom: 30px;
+            display: inline-block;
+        }
+
+        .read-more:hover {
+            color: #333;
+            text-decoration: underline;
+        }
+
+        .carousel-container {
+            position: relative;
+        }
+
+        .dress-card {
+            background: white;
+            overflow: hidden;
+            margin: 0 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            display: flex;
+            align-items: stretch;
+        }
+
+        .dress-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+        }
+
+        .dress-image {
+            width: 100%;
+            height: 80px;
+            object-fit: cover;
+            flex: 1;
+        }
+
+        .dress-label {
+            text-align: left;
+            flex: 3;
+            background-color: green;
+            color: white;
+            padding: 16px;
+            display: flex;
+            align-items: center;
+        }
+
+        .dress-label h3 {
+            font-size: 16px;
+            font-weight: 500;
+            color: inherit;
+            margin: 0;
+        }
+
+        /* Slick customizations */
+        .slick-slider {
+            position: relative;
+        }
+
+        .slick-track {
+            display: flex;
+            align-items: center;
+        }
+
+        .slick-slide {
+            padding: 0 4px;
+        }
+
+        .slick-slide > div {
+            height: 100%;
+        }
+
+        /* Custom arrow styles */
+        .slick-prev,
+        .slick-next {
+            width: 40px;
+            height: 40px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            z-index: 2;
+        }
+
+        .slick-prev {
+            left: -20px;
+        }
+
+        .slick-next {
+            right: -20px;
+        }
+
+        .slick-prev:before,
+        .slick-next:before {
+            font-size: 18px;
+            color: #333;
+            opacity: 1;
+        }
+
+        .slick-prev:hover,
+        .slick-next:hover {
+            background: #f0f0f0;
+        }
+
+        /* Hide dots */
+        .slick-dots {
+            display: none !important;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .slick-prev {
+                left: -15px;
+            }
+            
+            .slick-next {
+                right: -15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="section-title">Dresses</h1>
+        <a href="#" class="read-more">Read More</a>
+        
+        <div class="carousel-container">
+            <div class="dresses-carousel">
+                <div class="dress-card">
+                    <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=300&h=200&fit=crop&crop=center" alt="Jumpsuits" class="dress-image">
+                    <div class="dress-label">
+                        <h3>Jumpsuits</h3>
+                    </div>
+                </div>
+                
+                <div class="dress-card">
+                    <img src="https://images.unsplash.com/photo-1566479179817-c3d86b4e3b70?w=300&h=200&fit=crop&crop=center" alt="Black Dresses" class="dress-image">
+                    <div class="dress-label">
+                        <h3>Black Dresses</h3>
+                    </div>
+                </div>
+                
+                <div class="dress-card">
+                    <img src="https://images.unsplash.com/photo-1542272604-787c3835535d?w=300&h=200&fit=crop&crop=center" alt="Denim Dresses" class="dress-image">
+                    <div class="dress-label">
+                        <h3>Denim Dresses</h3>
+                    </div>
+                </div>
+                
+                <div class="dress-card">
+                    <img src="https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?w=300&h=200&fit=crop&crop=center" alt="Tea Dresses" class="dress-image">
+                    <div class="dress-label">
+                        <h3>Tea Dresses</h3>
+                    </div>
+                </div>
+                
+                <div class="dress-card">
+                    <img src="https://images.unsplash.com/photo-1539008835657-9e8e9680c956?w=300&h=200&fit=crop&crop=center" alt="Beach Dresses" class="dress-image">
+                    <div class="dress-label">
+                        <h3>Beach Dresses</h3>
+                    </div>
+                </div>
+                
+                <div class="dress-card">
+                    <img src="https://images.unsplash.com/photo-1485518882345-15568b007407?w=300&h=200&fit=crop&crop=center" alt="Shirt Dresses" class="dress-image">
+                    <div class="dress-label">
+                        <h3>Shirt Dresses</h3>
+                    </div>
+                </div>
+                
+                <div class="dress-card">
+                    <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=300&h=200&fit=crop&crop=center" alt="Maxi Dresses" class="dress-image">
+                    <div class="dress-label">
+                        <h3>Maxi Dresses</h3>
+                    </div>
+                </div>
+                
+                <div class="dress-card">
+                    <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=300&h=200&fit=crop&crop=center" alt="Mini Dresses" class="dress-image">
+                    <div class="dress-label">
+                        <h3>Mini Dresses</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery (required for Slick) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
+    <!-- Slick Carousel JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    
+    <script>
+        $(document).ready(function(){
+            $('.dresses-carousel').slick({
+                infinite: true,
+                slidesToShow: 5,
+                slidesToScroll: 1,
+                autoplay: false,
+                autoplaySpeed: 3000,
+                arrows: true,
+                dots: false,
+                responsive: [
+                    {
+                        breakpoint: 1024,
+                        settings: {
+                            slidesToShow: 4,
+                            slidesToScroll: 1
+                        }
+                    },
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            slidesToShow: 3,
+                            slidesToScroll: 1
+                        }
+                    },
+                    {
+                        breakpoint: 480,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 1
+                        }
+                    },
+                    {
+                        breakpoint: 320,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1
+                        }
+                    }
+                ]
+            });
+
+            // Add click handlers for the dress cards
+            $('.dress-card').on('click', function() {
+                const dressType = $(this).find('h3').text();
+                console.log('Clicked on:', dressType);
+                // You can add navigation logic here
+            });
+        });
+    </script>
+</body>
+</html>
