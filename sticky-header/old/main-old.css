@@ -1,0 +1,5 @@
+@media (max-width: 768px) {
+    #main-content header.woocommerce-products-header h1 {
+        margin-bottom: 0;
+    }
+}

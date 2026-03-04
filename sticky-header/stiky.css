@@ -1,0 +1,41 @@
+/* ─── VWO Variation CSS ───────────────────────────────────────────────────────
+   Sticky Header Collapse — mobile only
+   Paste this into: Variation > Edit Code > CSS
+   ─────────────────────────────────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+
+    /* Prevent FOUC: Hide the header until the JS finishes initializing */
+    .woocommerce-products-header {
+        visibility: hidden;
+    }
+
+    .vwo-initialized .woocommerce-products-header {
+        visibility: visible;
+    }
+
+    /* Remove gap between h1 and the collapsed toggle container */
+    #main-content header.woocommerce-products-header h1 {
+        margin-bottom: 0;
+    }
+
+    /* Native CSS transition instead of jQuery slideToggle for efficiency */
+    .header-toggle-container {
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 0.4s ease-out;
+    }
+
+    .header-toggle-container.is-open {
+        max-height: 2000px;
+        /* High enough to fit content */
+    }
+
+    /* Chevron arrow sits inline with the header title */
+    .header-toggle-arrow {
+        display: inline-block;
+        font-size: 18px;
+        margin-left: 5px;
+        transition: transform 0.3s ease;
+    }
+}
